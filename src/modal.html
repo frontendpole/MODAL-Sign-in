@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modal example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="modal-div" class="modal-html-content">
+        <header id="modal-header">
+            <h1>Sign in</h1>
+        </header>
+        <section id="modal-form">
+            <form>
+                <input type="text" placeholder="Username" id="username-input">
+                <input type="password" placeholder="Login password" id="password-input">
+            </form>
+        </section>
+
+
+    </div>
+    <script type="module">
+        import {Modal} from "./modal.js";
+
+    const modal = new Modal({
+        htmlContent: document.querySelector('#modal-div')
+    });
+    document.querySelector('#sign-in').addEventListener('click', () => {
+        modal.open().then(closeType => {
+            if(closeType === Modal.ACCEPT) {
+
+            } else {
+
+            }
+        });
+    });
+</script>
+    <button id="sign-in">Sign in</button>
+</body>
+
+</html>
